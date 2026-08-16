@@ -50,6 +50,67 @@
         }
     </script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <!-- Zero-Config Native SEO & Meta Architecture -->
+    <link rel="canonical" href="{{ url()->current() }}">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="rating" content="RTA-5042-1996-1400-1577-RTA">
+    <meta name="audience" content="21+ only, Adults">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:site_name" content="Kings County Distillery">
+    <meta property="og:title" content="{{ $title ?? 'Kings County Distillery — New York City's Premier Craft Whiskey' }}">
+    <meta property="og:description" content="{{ $meta_description ?? 'Kings County Distillery is NYC's oldest, largest, and premier whiskey distillery, handcrafting award-winning bourbon, peated bourbon, and Empire Rye in the Brooklyn Navy Yard.' }}">
+    <meta property="og:image" content="{{ $hero_image ?? 'https://caskstack.com/images/og-default.jpg' }}">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title ?? 'Kings County Distillery — New York City's Premier Craft Whiskey' }}">
+    <meta name="twitter:description" content="{{ $meta_description ?? 'Kings County Distillery is NYC's oldest, largest, and premier whiskey distillery, handcrafting award-winning bourbon, peated bourbon, and Empire Rye in the Brooklyn Navy Yard.' }}">
+
+    <!-- Compliance-First Data Moat Signals -->
+    <meta name="caskstack:compliance" content="TTB-21-Plus-Direct-Connect">
+    <meta name="caskstack:architecture" content="Flat-File-Worker-Runtime">
+
+    <!-- Structured Data (JSON-LD) Schema.org Graph -->
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": "Organization",
+            "@id": "#organization",
+            "name": "Kings County Distillery",
+            "description": "Kings County Distillery is NYC's oldest, largest, and premier whiskey distillery, handcrafting award-winning bourbon, peated bourbon, and Empire Rye in the Brooklyn Navy Yard.",
+            "foundingDate": "2010",
+            "knowsAbout": [
+                "Artisanal Fermentation",
+                "Small Batch Distillation",
+                "Direct-to-Consumer Alcohol Compliance"
+            ]
+        },
+        {
+            "@type": "Distillery",
+            "@id": "#facility",
+            "name": "Kings County Distillery",
+            "description": "Kings County Distillery is NYC's oldest, largest, and premier whiskey distillery, handcrafting award-winning bourbon, peated bourbon, and Empire Rye in the Brooklyn Navy Yard.",
+            "isFamilyFriendly": false,
+            "typicalAgeRange": "21+",
+            "priceRange": "$$$",
+            "paymentAccepted": "Cash, Credit Card, Apple Pay, Google Pay",
+            "currenciesAccepted": "USD",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "299 Sands Street, Building 121, Brooklyn, NY 11205",
+                "addressCountry": "US"
+            },
+            "telephone": "(347) 529-6040",
+            "openingHours": "Daily: 12:00 PM \u2013 10:00 PM (Tours Wed - Sun)"
+        }
+    ]
+}
+    </script>
 </head>
 <body class="flex min-h-full flex-col font-jost bg-[#001A70] text-[#FBF9F5] antialiased" x-data="{ mobileMenuOpen: false, cartOpen: false, cartCount: 0 }">
 
