@@ -50,6 +50,7 @@
         }
     </script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
     <!-- Zero-Config Native SEO & Meta Architecture -->
     <link rel="canonical" href="{{ url()->current() }}">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -60,14 +61,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:site_name" content="Kings County Distillery">
-    <meta property="og:title" content="{{ $title ?? 'Kings County Distillery — New York City's Premier Craft Whiskey' }}">
-    <meta property="og:description" content="{{ $meta_description ?? 'Kings County Distillery is NYC's oldest, largest, and premier whiskey distillery, handcrafting award-winning bourbon, peated bourbon, and Empire Rye in the Brooklyn Navy Yard.' }}">
-    <meta property="og:image" content="{{ $hero_image ?? 'https://caskstack.com/images/og-default.jpg' }}">
+    <meta property="og:title" content="{{ $title ?? "Kings County Distillery — New York City\'s Premier Craft Whiskey" }}">
+    <meta property="og:description" content="{{ $meta_description ?? "Kings County Distillery is NYC\'s oldest, largest, and premier whiskey distillery, handcrafting award-winning bourbon, peated bourbon, and Empire Rye in the Brooklyn Navy Yard." }}">
+    <meta property="og:image" content="{{ $hero_image ?? "https://caskstack.com/images/og-default.jpg" }}">
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ $title ?? 'Kings County Distillery — New York City's Premier Craft Whiskey' }}">
-    <meta name="twitter:description" content="{{ $meta_description ?? 'Kings County Distillery is NYC's oldest, largest, and premier whiskey distillery, handcrafting award-winning bourbon, peated bourbon, and Empire Rye in the Brooklyn Navy Yard.' }}">
+    <meta name="twitter:title" content="{{ $title ?? "Kings County Distillery — New York City\'s Premier Craft Whiskey" }}">
+    <meta name="twitter:description" content="{{ $meta_description ?? "Kings County Distillery is NYC\'s oldest, largest, and premier whiskey distillery, handcrafting award-winning bourbon, peated bourbon, and Empire Rye in the Brooklyn Navy Yard." }}">
 
     <!-- Compliance-First Data Moat Signals -->
     <meta name="caskstack:compliance" content="TTB-21-Plus-Direct-Connect">
@@ -76,11 +77,11 @@
     <!-- Structured Data (JSON-LD) Schema.org Graph -->
     <script type="application/ld+json">
 {
-    "@context": "https://schema.org",
-    "@graph": [
+    "@@context": "https://schema.org",
+    "@@graph": [
         {
-            "@type": "Organization",
-            "@id": "#organization",
+            "@@type": "Organization",
+            "@@id": "#organization",
             "name": "Kings County Distillery",
             "description": "Kings County Distillery is NYC's oldest, largest, and premier whiskey distillery, handcrafting award-winning bourbon, peated bourbon, and Empire Rye in the Brooklyn Navy Yard.",
             "foundingDate": "2010",
@@ -91,8 +92,8 @@
             ]
         },
         {
-            "@type": "Distillery",
-            "@id": "#facility",
+            "@@type": "Distillery",
+            "@@id": "#facility",
             "name": "Kings County Distillery",
             "description": "Kings County Distillery is NYC's oldest, largest, and premier whiskey distillery, handcrafting award-winning bourbon, peated bourbon, and Empire Rye in the Brooklyn Navy Yard.",
             "isFamilyFriendly": false,
@@ -101,7 +102,7 @@
             "paymentAccepted": "Cash, Credit Card, Apple Pay, Google Pay",
             "currenciesAccepted": "USD",
             "address": {
-                "@type": "PostalAddress",
+                "@@type": "PostalAddress",
                 "streetAddress": "299 Sands Street, Building 121, Brooklyn, NY 11205",
                 "addressCountry": "US"
             },
