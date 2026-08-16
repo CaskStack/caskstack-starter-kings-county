@@ -1,0 +1,17 @@
+name: Kings County Distillery
+author: CaskStack
+url: https://github.com/CaskStack/caskstack-starter-kings-county
+description: "New York City's oldest and premier craft whiskey distillery, making handmade straight bourbon, peated bourbon, and Empire Rye in the historic Brooklyn Navy Yard Paymaster Building."
+version: 1.0.0
+compatibility:
+  statamic: "^5.0"
+  laravel: "^11.0"
+category: distillery
+verticals:
+  - distillery
+  - craft-spirits
+  - whiskey
+  - bourbon
+  - rye
+tier: starter
+price: 0
