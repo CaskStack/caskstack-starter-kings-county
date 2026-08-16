@@ -10,7 +10,7 @@
                 {{ $b['eyebrow'] ?? 'The History & The Yard' }}
             </span>
             <h2 class="font-cormorant text-3xl sm:text-5xl font-bold text-kings-parchment leading-tight">
-                {{ $b['headline'] ?? 'Reclaiming New York City's Historic Whiskey Legacy' }}
+                {{ $b['headline'] ?? "Reclaiming New York City's Historic Whiskey Legacy" }}
             </h2>
             <div class="space-y-4 text-kings-muted text-base leading-relaxed pt-2">
                 <p>{{ $b['story_p1'] ?? '' }}</p>
