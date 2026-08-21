@@ -115,6 +115,11 @@
 </head>
 <body class="flex min-h-full flex-col font-jost bg-[#001A70] text-[#FBF9F5] antialiased" x-data="{ mobileMenuOpen: false, cartOpen: false, cartCount: 0 }">
 
+    <!-- WCAG 2.4.1: Bypass Blocks Skip Link -->
+    <a href="#storefront-main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-400 focus:text-black focus:font-bold focus:rounded-xl focus:shadow-2xl focus:outline-none">
+        Skip to content
+    </a>
+
     <!-- Top Navy Yard Marquee Bar -->
     <div class="bg-gradient-to-r from-kings-deep via-kings-navy to-kings-deep border-b border-kings-border px-4 py-2 text-center text-xs font-mono tracking-widest flex items-center justify-center gap-3">
         <span class="inline-block w-2 h-2 rounded-full bg-kings-copper animate-ping"></span>
@@ -123,7 +128,7 @@
     </div>
 
     <!-- Main Navigation Header -->
-    <header class="sticky top-0 z-40 w-full border-b border-kings-border bg-[#001A70]/95 backdrop-blur-md transition-all">
+    <header role="banner" class="sticky top-0 z-40 w-full border-b border-kings-border bg-[#001A70]/95 backdrop-blur-md transition-all">
         <div class="max-w-7xl mx-auto flex h-20 items-center justify-between px-4 sm:px-6 lg:px-8">
             
             <!-- Brand Logo -->
@@ -142,7 +147,7 @@
             </a>
 
             <!-- Navigation Links -->
-            <nav class="hidden md:flex items-center space-x-8 text-xs font-mono uppercase tracking-widest text-kings-muted">
+            <nav aria-label="Main Navigation" class="hidden md:flex items-center space-x-8 text-xs font-mono uppercase tracking-widest text-kings-muted">
                 <a href="#about" class="hover:text-kings-copper transition">Paymaster Heritage</a>
                 <a href="#whiskey-lineup" class="hover:text-kings-copper transition">Whiskeys</a>
                 <a href="#whiskey-lineup" class="hover:text-kings-copper transition">Bourbon & Rye</a>
@@ -157,13 +162,13 @@
                     <span>Book Tour</span>
                 </a>
 
-                <button @click="cartOpen = true" type="button" class="relative p-2 text-kings-parchment hover:text-kings-copper transition" aria-label="View Cart">
+                <button @click="cartOpen = true" type="button" class="relative p-2 text-kings-parchment hover:text-kings-copper transition cursor-pointer" aria-label="Open Cellar Cart">
                     <i class="fa-solid fa-whiskey-glass text-lg"></i>
                     <span x-show="cartCount > 0" x-text="cartCount" class="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-kings-copper text-zinc-950 font-mono text-[9px] font-extrabold flex items-center justify-center">0</span>
                 </button>
 
                 <!-- Mobile Menu Toggle -->
-                <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" class="md:hidden p-2 text-kings-parchment hover:text-kings-copper">
+                <button @click="mobileMenuOpen = !mobileMenuOpen" type="button" aria-label="Toggle Navigation Menu" class="md:hidden p-2 text-kings-parchment hover:text-kings-copper cursor-pointer">
                     <i class="fa-solid fa-bars text-xl"></i>
                 </button>
             </div>
@@ -178,13 +183,13 @@
     </header>
 
     <!-- Content Slot -->
-    <main class="flex-1">
+    <main id="storefront-main-content" tabindex="-1" role="main" class="flex-1">
         @yield('content')
         {{ $slot ?? '' }}
     </main>
 
     <!-- Global Footer -->
-    <footer class="border-t border-kings-border bg-kings-deep pt-16 pb-12 text-kings-muted text-xs">
+    <footer role="contentinfo" class="border-t border-kings-border bg-kings-deep pt-16 pb-12 text-kings-muted text-xs">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
             
             <div class="space-y-4">
